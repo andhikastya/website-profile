@@ -41,7 +41,7 @@ export const projects = [
       title: 'Wyndham Basketball',
       meta: 'Website • 2024',
       description:
-        'A website for a community basketball association in Wyndham, Australia, covering game schedules, registration, news, and event information.',
+        'A community basketball association website in Wyndham, Australia, covering schedules, registration, and news.',
       image: '/images/projects/wyndham-basketball/thumbnail.webp',
     },
     detail: {
