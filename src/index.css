@@ -1,0 +1,96 @@
+/*
+ * index.css — gaya dasar website
+ * ------------------------------
+ * 1. Mengaktifkan Tailwind CSS.
+ * 2. @theme  : token design system (warna & font), SAMA dengan page "Design System" di Figma.
+ *              Setelah ditulis di sini, token bisa dipakai sebagai class Tailwind,
+ *              contoh: bg-primary-500, text-muted, bg-surface, border-line.
+ * 3. @utility: gaya teks (heading-1, body-lg, dst.) sesuai Text Style di Figma.
+ */
+@import 'tailwindcss';
+
+@theme {
+  /* Warna (Color Style di Figma) */
+  --color-primary-500: #4a38b8; /* ungu utama: tombol, aksen */
+  --color-primary-600: #3b2d93; /* ungu lebih gelap: dipakai saat hover */
+  --color-page: #121212; /* latar halaman */
+  --color-surface: #1b1a1f; /* latar kartu */
+  --color-muted: #79819a; /* teks sekunder (abu-abu) */
+  --color-ink: #2e2e48; /* teks di atas latar terang */
+  --color-line: #21242e; /* garis pemisah */
+  --color-line-subtle: #2e3241; /* garis pemisah tipis */
+  --color-danger: #ef5555; /* merah: nilai negatif / error */
+
+  /* Font utama */
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+/*
+ * Gaya teks (Text Style di Figma).
+ * Ukuran heading otomatis mengecil di layar HP, lalu membesar di tablet/desktop.
+ */
+@utility heading-1 {
+  font-size: 2rem; /* 32px di HP */
+  line-height: 1.15;
+  font-weight: 700;
+  @media (width >= 48rem) {
+    font-size: 2.25rem; /* 36px di tablet */
+  }
+  @media (width >= 64rem) {
+    font-size: 4rem; /* 64px di desktop */
+  }
+}
+@utility heading-2 {
+  font-size: 1.625rem; /* 26px di HP */
+  line-height: 1.25;
+  font-weight: 700;
+  @media (width >= 48rem) {
+    font-size: 2rem; /* 32px */
+  }
+}
+@utility heading-3 {
+  font-size: 1.25rem; /* 20px di HP */
+  line-height: 1.3;
+  font-weight: 700;
+  @media (width >= 48rem) {
+    font-size: 1.5rem; /* 24px */
+  }
+}
+@utility heading-4 {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  font-weight: 600;
+  @media (width >= 48rem) {
+    font-size: 1.375rem; /* 22px */
+  }
+}
+@utility body-lg {
+  font-size: 1rem;
+  line-height: 1.6;
+  @media (width >= 48rem) {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.5; /* 27px */
+  }
+}
+@utility body-md {
+  font-size: 1rem; /* 16px */
+  line-height: 1.5;
+}
+@utility body-sm {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.5; /* 21px */
+}
+@utility caption {
+  font-size: 0.75rem; /* 12px */
+  line-height: 1.5;
+}
+
+/* Gaya dasar seluruh halaman */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-page font-sans text-white antialiased;
+  }
+}

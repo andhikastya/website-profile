@@ -1,0 +1,18 @@
+# Dependency
+node_modules/
+
+# Hasil build
+dist/
+
+# Log
+*.log
+npm-debug.log*
+
+# File sistem / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Variabel rahasia
+.env
+.env.*
